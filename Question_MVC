@@ -1,0 +1,13 @@
+#Q1 : What is the difference between session, tempdata, viewdata, and viewbag?
+[Session]
+Session is an object derived from the HttpSessionState class. Session is the property of the HttpContext class. Session can also pass the data from the controller to the view and Action to Action. Session is valid for all requests, not for a single redirect and it is also need typecasting to getting data and check for null values to avoid error.
+
+[Temp Data]
+Tempdata is a dictionary object derived from the TempDataDictionary class and is stored in a short live session. TempData is a property of the Controller class. It's life is very short and exists only until the target view is fully loaded. It's required typecasting for getting the data and to check for null values to avoid errors. Temdata cannot pass the data from the Controller to the View. TempData persists the data ActionResult to ActionResult.
+
+[ViewData]
+ViewData is a dictionary object derived from the ViewDataDictionary class. Viewdata passes data between a Controller and a View. Its life lies only during the current request. If redirection occurs then its value become null. Viewdata is a property of the controller class.
+
+[ViewBag]
+A Viewbag is a collection of viewdata. A Viewbag is a dynamic property that benefits from a new feature of C# 4.0. Viewbag doesn't require typecasting for complex datatype. Viewbag is a property of the controller class. Its life exists only during the current request. If redirection occurs then its value become null.
+

@@ -1,0 +1,6 @@
+--Question 3
+select [email]
+from Person
+where [email] <> ''
+and [email] in (select [DirName] from Person group by [email] having count(*)>1)
+order by [email]
